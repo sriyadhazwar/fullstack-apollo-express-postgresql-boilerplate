@@ -1,74 +1,64 @@
 # fullstack-apollo-express-postgresql-boilerplate
 
-[![Build Status](https://travis-ci.org/the-road-to-graphql/fullstack-apollo-express-postgresql-boilerplate.svg?branch=master)](https://travis-ci.org/the-road-to-graphql/fullstack-apollo-express-postgresql-boilerplate) [![Slack](https://slack-the-road-to-learn-react.wieruch.com/badge.svg)](https://slack-the-road-to-learn-react.wieruch.com/) [![Greenkeeper badge](https://badges.greenkeeper.io/the-road-to-graphql/fullstack-apollo-express-postgresql-boilerplate.svg)](https://greenkeeper.io/)
+[![Status Pembuatan](https://travis-ci.org/the-road-to-graphql/fullstack-apollo-express-postgresql-boilerplate.svg?branch=master)](https://travis-ci .org/the-road-to-graphql/fullstack-apollo-express-postgresql-boilerplate) [![Slack](https://slack-the-road-to-learn-react.wieruch.com/badge.svg )](https://slack-the-road-to-learn-react.wieruch.com/) [![lencana Greenkeeper](https://badges.greenkeeper.io/the-road-to-graphql/fullstack -apollo-express-postgresql-boilerplate.svg)](https://greenkeeper.io/)
 
-A full-fledged Apollo Server with Apollo Client starter project with React and Express. [Read more about it in this tutorial to build it yourself](https://www.robinwieruch.de/graphql-apollo-server-tutorial/).
+Server Apollo lengkap dengan proyek awal Klien Apollo dengan React dan Express. [Baca selengkapnya di tutorial ini untuk membuatnya sendiri](https://www.robinwieruch.de/graphql-apollo-server-tutorial/).
 
-**Family of universal fullstack repositories:**
+**Kelompok repositori fullstack universal:**
 
-Server Applications:
+Aplikasi Server:
 
-* [Node.js with Express + MongoDB](https://github.com/the-road-to-graphql/fullstack-apollo-express-mongodb-boilerplate)
-* [Node.js with Express + PostgreSQL](https://github.com/the-road-to-graphql/fullstack-apollo-express-postgresql-boilerplate)
+* [Node.js dengan Express + MongoDB](https://github.com/the-road-to-graphql/fullstack-apollo-express-mongodb-boilerplate)
+* [Node.js dengan Express + PostgreSQL](https://github.com/the-road-to-graphql/fullstack-apollo-express-postgresql-boilerplate)
 
-Client Applications:
+ Aplikasi Klien:
 
-* [React Client](https://github.com/the-road-to-graphql/fullstack-apollo-react-boilerplate)
-* [React Native Client](https://github.com/morenoh149/fullstack-apollo-react-native-boilerplate)
+ * [Klien Bereaksi](https://github.com/the-road-to-graphql/fullstack-apollo-react-boilerplate)
+ * [React Native Client](https://github.com/morenoh149/fullstack-apollo-react-native-boilerplate)
 
-## Features of Client + Server
+ ## Fitur Klien + Server
 
-* React (create-react-app) with Apollo Client
-  * Queries, Mutations, Subscriptions
-* Node.js with Express and Apollo Server
-  * cursor-based Pagination
-* PostgreSQL Database with Sequelize
-  * entities: users, messages
-* Authentication
-  * powered by JWT and local storage
-  * Sign Up, Sign In, Sign Out
-* Authorization
-  * protected endpoint (e.g. verify valid session)
-  * protected resolvers (e.g. e.g. session-based, role-based)
-  * protected routes (e.g. session-based, role-based)
-* performance optimizations
-  * example of using Facebook's dataloader
-* E2E testing
+ * Bereaksi (buat-reaksi-aplikasi) dengan Klien Apollo * Kueri, Mutasi, Langganan
+ * Node.js dengan Express dan Apollo Server * Pagination berbasis kursor
+ * Database PostgreSQL dengan Sequelize * entitas: pengguna, pesan
+ * Otentikasi * didukung oleh JWT dan penyimpanan lokal * Daftar, Masuk, Keluar
+ * Otorisasi * titik akhir yang dilindungi (mis. verifikasi sesi yang valid) * resolver yang dilindungi (mis., berbasis sesi, berbasis peran) * rute yang dilindungi (mis. berbasis sesi, berbasis peran)
+ * optimasi kinerja * contoh penggunaan pemuat data Facebook
+ * Pengujian E2E
 
-## Installation
+ ## Instalasi
 
-* `git clone git@github.com:the-road-to-graphql/fullstack-apollo-express-postgresql-boilerplate.git`
-* `cd fullstack-apollo-express-postgresql-boilerplate`
-* `touch .env`
-* `npm install`
-* fill out *.env file* (see below)
-* start PostgreSQL database
-* `npm start`
-* visit `http://localhost:8000` for GraphQL playground
+ * `git klon git@github.com:the-road-to-graphql/fullstack-apollo-express-postgresql-boilerplate.git`
+ * `cd fullstack-apollo-express-postgresql-boilerplate`
+ * `sentuh .env`
+ * `npm install`
+ * isi *.env file* (lihat di bawah)
+ * mulai database PostgreSQL
+ * `npm mulai`
+ * kunjungi `http://localhost:8000` untuk taman bermain GraphQL
 
-#### .env file
+ #### .env file
 
-Since this boilerplate project is using PostgreSQL, you have to install it for your machine and get a database up and running. You find everything for the set up over here: [Setup PostgreSQL with Sequelize in Express Tutorial](https://www.robinwieruch.de/postgres-express-setup-tutorial). After you have created a database and a database user, you can fill out the environment variables in the *server/.env* file.
+ Karena proyek boilerplate ini menggunakan PostgreSQL, Anda harus menginstalnya untuk mesin Anda dan mengaktifkan dan menjalankan database. Anda menemukan segalanya untuk penyiapan di sini: [Setup PostgreSQL dengan Sequelize in Express Tutorial](https://www.robinwieruch.de/postgres-express-setup-tutorial). Setelah Anda membuat database dan pengguna database, Anda dapat mengisi variabel lingkungan di file *server/.env*.
 
-```
-DATABASE=mydatabase
+ ```
+ DATABASE = basis data saya
 
-DATABASE_USER=postgres
-DATABASE_PASSWORD=postgres
+ DATABASE_USER=postgres
+ DATABASE_PASSWORD=postgres
 
-SECRET=asdlplplfwfwefwekwself.2342.dawasdq
-```
+ RAHASIA=asdlplplfwfwefwekwself.2342.dawasdq
+ ```
 
-The `SECRET` is just a random string for your authentication. Keep all these information secure by adding the *.env* file to your *.gitignore* file. No third-party should have access to this information.
+ `RAHASIA` hanyalah string acak untuk otentikasi Anda. Amankan semua informasi ini dengan menambahkan file *.env* ke *.gitignore* file. Pihak ketiga tidak boleh memiliki akses ke informasi ini.
 
-#### Testing
+ #### Pengujian
 
-* adjust `test:run-server` npm script with `TEST_DATABASE` environment variable in package.json to match your testing database name
-  * to match it from package.json: `createdb mytestdatabase` with psql
-* one terminal: npm run test:run-server
-* second terminal: npm run test:execute-test
+ * sesuaikan skrip npm `test:run-server` dengan variabel lingkungan `TEST_DATABASE` di package.json agar sesuai dengan nama database pengujian Anda * untuk mencocokkannya dari package.json: `createdb mytestdatabase` dengan psql
+ * satu terminal: npm run test: run-server
+ * terminal kedua: npm run test:execute-test
 
-## Want to learn more about React + GraphQL + Apollo?
+ ## Ingin mempelajari lebih lanjut tentang React + GraphQL + Apollo?
 
-* Don't miss [upcoming Tutorials and Courses](https://www.getrevue.co/profile/rwieruch)
-* Check out current [React Courses](https://roadtoreact.com)
+ * Jangan lewatkan [Tutorial dan Kursus yang akan datang](https://www.getrevue.co/profile/rwieruch)
+ * Lihat [Kursus Bereaksi] saat ini (https://roadtoreact.com)
